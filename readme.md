@@ -315,7 +315,7 @@ CanvasRenderingContext2D.putImageData()
 
 
 #### 图像平滑
-- 图像平滑的方式；如果禁用，缩放时，图像不会被平滑处理。
+- 图像平滑的方式；如果禁用，缩放时，图像不会被平滑处理。  
 ```javascript
 CanvasRenderingContext2D.imageSmoothingEnabled 
 ```
