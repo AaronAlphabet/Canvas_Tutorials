@@ -4,6 +4,24 @@ canvas 绘图功能很强大，需要进一步学习
 
 ### api汇总
 
+[绘制矩形](#绘制矩形)
+[绘制文本](#绘制文本)
+[线型](#线型)
+[线型](#线型)
+[文本样式](#文本样式)
+[填充和描边样式](#填充和描边样式)
+[渐变和图案](#渐变和图案)
+[阴影](#阴影)
+[路径](#路径)
+[绘制路径](#绘制路径)
+[变换](#变换)
+[合成](#合成)
+[绘制图像](#绘制图像)
+[像素控制](#像素控制)
+[图像平滑](#图像平滑)
+[canvas状态](#canvas状态)
+[点击区域](#点击区域)
+
 #### 绘制矩形
 
 - 设置指定矩形区域内（以 点 (x, y) 为起点，范围是(width, height) ）所有像素变成透明，并擦除之前绘制的所有内容。
@@ -205,7 +223,6 @@ CanvasRenderingContext2D.ellipse()
 CanvasRenderingContext2D.rect()
 ```
 
-
 #### 绘制路径
 - 使用当前的样式填充子路径。
 ```javascript
@@ -313,14 +330,13 @@ CanvasRenderingContext2D.getImageData()
 CanvasRenderingContext2D.putImageData()
 ```
 
-
 #### 图像平滑
 - 图像平滑的方式；如果禁用，缩放时，图像不会被平滑处理。  
 ```javascript
 CanvasRenderingContext2D.imageSmoothingEnabled
 ```
 
-#### canvas 状态
+#### canvas状态
 - 使用栈保存当前的绘画样式状态，你可以使用 restore() 恢复任何改变。
 ```javascript
 CanvasRenderingContext2D.save()
