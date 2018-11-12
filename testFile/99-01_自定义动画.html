@@ -8,6 +8,9 @@
 <body>
 <main class="clearFix">
   <div class="contentWrap fl">
+    <div id="canvas" class="wrap_400_200">
+
+    </div>
     <form id="render1">
       <span>二次贝塞尔曲线</span>
       <div>
@@ -21,33 +24,31 @@
       </div>
       <button type="submit">render</button>
     </form>
-    <form id="render2">
-      <span>三次贝塞尔曲线</span>
-      <div>
-        起点 <input type="text" value="10, 100" id="sp2">
-      </div>
-      <div>
-        控制点1 <input type="text" value="100, 10" id="cp2-0">
-      </div>
-      <div>
-        控制点2 <input type="text" value="300, 190" id="cp2-1">
-      </div>
-      <div>
-        终点 <input type="text" value="390, 100" id="ep2">
-      </div>
-      <button type="submit">render</button>
-    </form>
-  </div>
-  <div class="contentWrap fr">
-    <div id="canvas" class="wrap_400_200">
-
-    </div>
     <div id="canvas2" class="wrap_400_200">
 
     </div>
+    <form id="render2">
+      <span>三次贝塞尔曲线</span>
+      <div>
+        起点 <input type="text" value="10, 190" id="sp2">
+      </div>
+      <div>
+        控制点1 <input type="text" value="10, 10" id="cp2-0">
+      </div>
+      <div>
+        控制点2 <input type="text" value="390, 190" id="cp2-1">
+      </div>
+      <div>
+        终点 <input type="text" value="390, 10" id="ep2">
+      </div>
+      <button type="submit">render</button>
+    </form>
     <div id="canvas3" class="wrap_400_200">
 
     </div>
+  </div>
+  <div class="contentWrap fr">
+
   </div>
 </main>
 </body>
@@ -200,6 +201,17 @@
     ctx.fillStyle = '#000';
 
     function render2() {
+      ctx.fillStyle = 'rgba(255,255,255,0.2)';
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.save();
+      ctx.strokeStyle = '#0f0';
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(...p0);
+      ctx.bezierCurveTo(...cp1, ...cp2, ...p1);
+      ctx.stroke();
+      ctx.restore();
 
       // start end
       ctx.save();
@@ -222,7 +234,7 @@
       ctx.save();
       ctx.beginPath();
       ctx.fillStyle = '#000';
-      ctx.arc(x(t), y(t), 2, 0, Math.PI * 2);
+      ctx.arc(x(t), y(t), 2.5, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
       t += 0.01;
@@ -258,7 +270,8 @@
       x = bezierCurveCreator(p0[0], cp1[0], cp2[0], p1[0]);
       y = bezierCurveCreator(p0[1], cp1[1], cp2[1], p1[1]);
 
-      ctx.clearRect(0, 0, width, height);
+      // ctx.fillStyle = 'rgba(255,255,255,0.1)';
+      // ctx.clearRect(0, 0, width, height);
       render2();
     }
   }
